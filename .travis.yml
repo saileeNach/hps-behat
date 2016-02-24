@@ -1,0 +1,19 @@
+language: php
+sudo: false
+
+before_install:
+  - pip install behave
+  - rvm install 2.2
+  - rvm use 2.2
+  - gem install hiptest-publisher
+  - "hiptest-publisher -c behat.conf --only=features,step_definitions --test-run-id=16135"
+  - php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
+  - php composer-setup.php
+  - php -r "unlink('composer-setup.php');"
+  - php composer.phar install
+
+script:
+  - vendor/bin/behat -f junit
+
+after_script:
+  - hiptest-publisher -c behat.conf --push=results/report.xml --test-run-id=16135
