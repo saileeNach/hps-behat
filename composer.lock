@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e4de09a9423f822071631be603bcfad6",
-    "content-hash": "fadcb803e1883211f4490f40bda2ea0b",
+    "hash": "221e212f9fe3023d81dadcbf5a5809d2",
+    "content-hash": "500640d5a8502f6fcf146bd243f69282",
     "packages": [],
     "packages-dev": [
         {
@@ -240,6 +240,45 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "jarnaiz/behat-junit-formatter",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/j-arnaiz/behat-junit-formatter.git",
+                "reference": "2f80b3881e04d3cf43e05ab821c0e80675a9846d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/j-arnaiz/behat-junit-formatter/zipball/2f80b3881e04d3cf43e05ab821c0e80675a9846d",
+                "reference": "2f80b3881e04d3cf43e05ab821c0e80675a9846d",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "~3.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "jarnaiz\\JUnitFormatter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Jesús Arnaiz",
+                    "email": "j.arnaiz@gmail.com"
+                }
+            ],
+            "description": "Behat 3 JUnit xml formatter",
+            "time": "2016-01-26 17:05:07"
         },
         {
             "name": "myclabs/deep-copy",

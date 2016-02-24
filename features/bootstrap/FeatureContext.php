@@ -13,7 +13,7 @@ class FeatureContext implements SnippetAcceptingContext {
 
 
   /**
-   * @Given /^I start the coffee machine "(.*)"$/
+   * @When /^I start the coffee machine "(.*)"$/
    */
   public function iStartTheCoffeeMachine($lang = "en"){
     $this->actionwords->iStartTheCoffeeMachine($lang);
@@ -78,7 +78,7 @@ class FeatureContext implements SnippetAcceptingContext {
   /**
    * @When /^I take "(.*)" coffees$/
    */
-  public function iTakeCoffeeNumberCoffees($coffee_number){
+  public function iTakeCoffeeNumberCoffees($coffee_number = 10){
     $this->actionwords->iTakeCoffeeNumberCoffees($coffee_number);
   }
 
