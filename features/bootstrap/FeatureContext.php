@@ -29,7 +29,7 @@ class FeatureContext implements SnippetAcceptingContext {
   /**
    * @Then /^message "(.*)" should be displayed$/
    */
-  public function messageMessageShouldBeDisplayed($message){
+  public function messageMessageShouldBeDisplayed($message = ""){
     $this->actionwords->messageMessageShouldBeDisplayed($message);
   }
 
@@ -55,7 +55,7 @@ class FeatureContext implements SnippetAcceptingContext {
   }
 
   /**
-   * @Given /^I empty the coffee grounds$/
+   * @When /^I empty the coffee grounds$/
    */
   public function iEmptyTheCoffeeGrounds(){
     $this->actionwords->iEmptyTheCoffeeGrounds();
@@ -76,7 +76,7 @@ class FeatureContext implements SnippetAcceptingContext {
   }
 
   /**
-   * @When /^I take "(.*)" coffees$/
+   * @Given /^I take "(.*)" coffees$/
    */
   public function iTakeCoffeeNumberCoffees($coffee_number = 10){
     $this->actionwords->iTakeCoffeeNumberCoffees($coffee_number);
@@ -90,17 +90,45 @@ class FeatureContext implements SnippetAcceptingContext {
   }
 
   /**
-   * @When /^fifty coffees have been taken without filling the tank$/
+   * @Given /^I handle everything except the water tank$/
    */
-  public function fiftyCoffeesHaveBeenTakenWithoutFillingTheTank(){
-    $this->actionwords->fiftyCoffeesHaveBeenTakenWithoutFillingTheTank();
+  public function iHandleEverythingExceptTheWaterTank(){
+    $this->actionwords->iHandleEverythingExceptTheWaterTank();
   }
 
   /**
-   * @When /^thirty eight coffees are taken without filling beans$/
+   * @Given /^I handle water tank$/
    */
-  public function thirtyEightCoffeesAreTakenWithoutFillingBeans(){
-    $this->actionwords->thirtyEightCoffeesAreTakenWithoutFillingBeans();
+  public function iHandleWaterTank(){
+    $this->actionwords->iHandleWaterTank();
+  }
+
+  /**
+   * @Given /^I handle beans$/
+   */
+  public function iHandleBeans(){
+    $this->actionwords->iHandleBeans();
+  }
+
+  /**
+   * @Given /^I handle coffee grounds$/
+   */
+  public function iHandleCoffeeGrounds(){
+    $this->actionwords->iHandleCoffeeGrounds();
+  }
+
+  /**
+   * @Given /^I handle everything except the beans$/
+   */
+  public function iHandleEverythingExceptTheBeans(){
+    $this->actionwords->iHandleEverythingExceptTheBeans();
+  }
+
+  /**
+   * @Given /^I handle everything except the grounds$/
+   */
+  public function iHandleEverythingExceptTheGrounds(){
+    $this->actionwords->iHandleEverythingExceptTheGrounds();
   }
 }
 ?>
