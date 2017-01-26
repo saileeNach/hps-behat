@@ -12,7 +12,7 @@ class Actionwords {
     $this->handleCoffeeGrounds = false;
   }
 
-  public function iStartTheCoffeeMachine($lang = "en") {
+  public function iStartTheCoffeeMachineUsingLanguageLang($lang = "en") {
     $this->sut->start($lang);
   }
 
@@ -68,7 +68,7 @@ class Actionwords {
   }
 
   public function theCoffeeMachineIsStarted() {
-    $this->iStartTheCoffeeMachine();
+    $this->iStartTheCoffeeMachineUsingLanguageLang();
   }
 
   public function thirtyEightCoffeesAreTakenWithoutFillingBeans() {
@@ -103,6 +103,23 @@ class Actionwords {
 
   public function iHandleCoffeeGrounds() {
     $this->handleCoffeeGrounds = true;
+  }
+
+  public function displayedMessageIs($__free_text = "") {
+    $this->messageMessageShouldBeDisplayed($__free_text);
+  }
+
+  public function iSwitchToSettingsMode() {
+    $this->sut->showSettings();
+  }
+
+  public function settingsShouldBe($__datatable = "||") {
+    $settings = [];
+    foreach ($__datatable->getRows() as $row) {
+      $settings[$row[0]] = $row[1];
+    }
+
+    PHPUnit_Framework_Assert::assertEquals($settings, $this->sut->getSettings());
   }
 }
 ?>

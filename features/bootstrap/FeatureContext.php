@@ -13,10 +13,10 @@ class FeatureContext implements SnippetAcceptingContext {
 
 
   /**
-   * @When /^I start the coffee machine "(.*)"$/
+   * @When /^I start the coffee machine using language "(.*)"$/
    */
-  public function iStartTheCoffeeMachine($lang = "en"){
-    $this->actionwords->iStartTheCoffeeMachine($lang);
+  public function iStartTheCoffeeMachineUsingLanguageLang($lang){
+    $this->actionwords->iStartTheCoffeeMachineUsingLanguageLang($lang);
   }
 
   /**
@@ -29,7 +29,7 @@ class FeatureContext implements SnippetAcceptingContext {
   /**
    * @Then /^message "(.*)" should be displayed$/
    */
-  public function messageMessageShouldBeDisplayed($message = ""){
+  public function messageMessageShouldBeDisplayed($message){
     $this->actionwords->messageMessageShouldBeDisplayed($message);
   }
 
@@ -78,7 +78,7 @@ class FeatureContext implements SnippetAcceptingContext {
   /**
    * @Given /^I take "(.*)" coffees$/
    */
-  public function iTakeCoffeeNumberCoffees($coffee_number = 10){
+  public function iTakeCoffeeNumberCoffees($coffee_number){
     $this->actionwords->iTakeCoffeeNumberCoffees($coffee_number);
   }
 
@@ -129,6 +129,27 @@ class FeatureContext implements SnippetAcceptingContext {
    */
   public function iHandleEverythingExceptTheGrounds(){
     $this->actionwords->iHandleEverythingExceptTheGrounds();
+  }
+
+  /**
+   * @Then /^displayed message is:$/
+   */
+  public function displayedMessageIs(PyStringNode $__free_text){
+    $this->actionwords->displayedMessageIs($__free_text);
+  }
+
+  /**
+   * @When /^I switch to settings mode$/
+   */
+  public function iSwitchToSettingsMode(){
+    $this->actionwords->iSwitchToSettingsMode();
+  }
+
+  /**
+   * @Then /^settings should be:$/
+   */
+  public function settingsShouldBe(TableNode $__datatable){
+    $this->actionwords->settingsShouldBe($__datatable);
   }
 }
 ?>
