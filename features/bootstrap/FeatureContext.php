@@ -22,8 +22,8 @@ class FeatureContext implements SnippetAcceptingContext {
   /**
    * @When /^I shutdown the coffee machine$/
    */
-  public function iShutdownTheCoffeeMachine(){
-    $this->actionwords->iShutdownTheCoffeeMachine();
+  public function iShutdownTheCoffeeMachine(TableNode $__datatable){
+    $this->actionwords->iShutdownTheCoffeeMachine($__datatable);
   }
 
   /**
@@ -76,7 +76,7 @@ class FeatureContext implements SnippetAcceptingContext {
   }
 
   /**
-   * @Given /^I take "(.*)" coffees$/
+   * @When /^I take "(.*)" coffees$/
    */
   public function iTakeCoffeeNumberCoffees($coffee_number){
     $this->actionwords->iTakeCoffeeNumberCoffees($coffee_number);
@@ -150,6 +150,13 @@ class FeatureContext implements SnippetAcceptingContext {
    */
   public function settingsShouldBe(TableNode $__datatable){
     $this->actionwords->settingsShouldBe($__datatable);
+  }
+
+  /**
+   * @Then /^a notification about descaling is displayed$/
+   */
+  public function aNotificationAboutDescalingIsDisplayed(){
+    $this->actionwords->aNotificationAboutDescalingIsDisplayed();
   }
 }
 ?>
